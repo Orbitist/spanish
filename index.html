@@ -1,13 +1,35 @@
 ---
 layout: page
 ---
-  <div class="container">
-    <div id="mapsList"></div>
-  </div> <!-- /container -->
+<nav style="margin-bottom:0px;border-radius:0px;" class="navbar navbar-fixed-top navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="{{ site.url }}">
+        Spanish Lesson Maps
+      </a>
+    </div><!-- /.navbar-header -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-globe"></i> Maps <span class="caret"></span></a>
+          <ul class="dropdown-menu" id="menuItems">
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.collapse navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
 
-  <script>
-    {% for post in site.posts %}
+<div id="mapsList"></div>
 
+<script>
+  {% for post in site.posts %}
     // Get points geojson data //
     var mapInfo = (function () {
       var mapInfo = null;
@@ -22,9 +44,7 @@ layout: page
         });
         return mapInfo;
     })();
-
-    $('#mapsList').append('<h1>' + mapInfo[0].map_title + '</h1><img class="img-responsive" src="' + mapInfo[0].map_image + '" /><p>' + mapInfo[0].map_body + '</p><a class="btn btn-sm btn-default" href="{{ site.baseurl }}{{ post.url }}" role="button">View Map</a><hr>');
-
-
-    {% endfor %}
-  </script>
+    $('#menuItems').append('<li><a href="#{{post.mapNumber}}"><i class="fa fa-map-marker"></i> ' + mapInfo[0].map_title + '</a></li>');
+    $('#mapsList').append('<a href="{{ site.url }}{{ post.url }}"><h1 id="{{post.mapNumber}}">' + mapInfo[0].map_title + '</h1><div class="mapsListImage"><img class="img-responsive" src="' + mapInfo[0].map_image + '" /></div></a><p>' + mapInfo[0].map_body + '</p><a class="btn btn-sm btn-default center-block" href="{{ site.url }}{{ post.url }}" role="button">View Map</a><hr>');
+  {% endfor %}
+</script>

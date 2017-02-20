@@ -17,13 +17,35 @@
 </head>
 
 	<body>
-		  <div class="container">
-    <div id="mapsList"></div>
-  </div> <!-- /container -->
+		<nav style="margin-bottom:0px;border-radius:0px;" class="navbar navbar-fixed-top navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="http://localhost:4000">
+        Spanish Lesson Maps
+      </a>
+    </div><!-- /.navbar-header -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-globe"></i> Maps <span class="caret"></span></a>
+          <ul class="dropdown-menu" id="menuItems">
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.collapse navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
 
-  <script>
-    
+<div id="mapsList"></div>
 
+<script>
+  
     // Get points geojson data //
     var mapInfo = (function () {
       var mapInfo = null;
@@ -38,12 +60,9 @@
         });
         return mapInfo;
     })();
-
-    $('#mapsList').append('<h1>' + mapInfo[0].map_title + '</h1><img class="img-responsive" src="' + mapInfo[0].map_image + '" /><p>' + mapInfo[0].map_body + '</p><a class="btn btn-sm btn-default" href="/day-of-the-dead" role="button">View Map</a><hr>');
-
-
-    
-
+    $('#menuItems').append('<li><a href="#1161"><i class="fa fa-map-marker"></i> ' + mapInfo[0].map_title + '</a></li>');
+    $('#mapsList').append('<a href="http://localhost:4000/day-of-the-dead"><h1 id="1161">' + mapInfo[0].map_title + '</h1><div class="mapsListImage"><img class="img-responsive" src="' + mapInfo[0].map_image + '" /></div></a><p>' + mapInfo[0].map_body + '</p><a class="btn btn-sm btn-default center-block" href="http://localhost:4000/day-of-the-dead" role="button">View Map</a><hr>');
+  
     // Get points geojson data //
     var mapInfo = (function () {
       var mapInfo = null;
@@ -58,15 +77,28 @@
         });
         return mapInfo;
     })();
-
-    $('#mapsList').append('<h1>' + mapInfo[0].map_title + '</h1><img class="img-responsive" src="' + mapInfo[0].map_image + '" /><p>' + mapInfo[0].map_body + '</p><a class="btn btn-sm btn-default" href="/christmas" role="button">View Map</a><hr>');
-
-
-    
-  </script>
+    $('#menuItems').append('<li><a href="#1562"><i class="fa fa-map-marker"></i> ' + mapInfo[0].map_title + '</a></li>');
+    $('#mapsList').append('<a href="http://localhost:4000/christmas"><h1 id="1562">' + mapInfo[0].map_title + '</h1><div class="mapsListImage"><img class="img-responsive" src="' + mapInfo[0].map_image + '" /></div></a><p>' + mapInfo[0].map_body + '</p><a class="btn btn-sm btn-default center-block" href="http://localhost:4000/christmas" role="button">View Map</a><hr>');
+  
+</script>
 	
-	
-		
+
+		<script>
+$(function() {
+  $('a[href*="#"]:not([href="#"])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html, body').animate({
+          scrollTop: target.offset().top
+        }, 1000);
+        return false;
+      }
+    }
+  });
+});
+</script>
 
 	</body>
 </html>
