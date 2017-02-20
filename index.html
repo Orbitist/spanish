@@ -2,12 +2,29 @@
 layout: page
 ---
   <div class="container">
-
-    {% for post in site.posts %}
-    <div class="col-md-6">
-      <h4>{{ post.mapNumber }}</h4>
-      <p><a class="btn btn-lg btn-success" href="{{ site.baseurl }}{{ post.url }}" role="button">View Map</a></p>
-    </div>
-    {% endfor %}
-
+    <div id="mapsList"></div>
   </div> <!-- /container -->
+
+  <script>
+    {% for post in site.posts %}
+
+    // Get points geojson data //
+    var mapInfo = (function () {
+      var mapInfo = null;
+        $.ajax({
+            'async': false,
+            'global': false,
+            'url': 'https://orbitist.space/maps/api/v1/map.json?mapid={{post.mapNumber}}',
+            'dataType': "json",
+            'success': function (data) {
+                mapInfo = data;
+            }
+        });
+        return mapInfo;
+    })();
+
+    $('#mapsList').append('<h1>' + mapInfo[0].map_title + '</h1><img class="img-responsive" src="' + mapInfo[0].map_image + '" /><p>' + mapInfo[0].map_body + '</p><a class="btn btn-sm btn-default" href="{{ site.baseurl }}{{ post.url }}" role="button">View Map</a><hr>');
+
+
+    {% endfor %}
+  </script>

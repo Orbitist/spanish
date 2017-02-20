@@ -18,20 +18,52 @@
 
 	<body>
 		  <div class="container">
-
-    
-    <div class="col-md-6">
-      <h4>1161</h4>
-      <p><a class="btn btn-lg btn-success" href="/day-of-the-dead" role="button">View Map</a></p>
-    </div>
-    
-    <div class="col-md-6">
-      <h4>1562</h4>
-      <p><a class="btn btn-lg btn-success" href="/christmas" role="button">View Map</a></p>
-    </div>
-    
-
+    <div id="mapsList"></div>
   </div> <!-- /container -->
+
+  <script>
+    
+
+    // Get points geojson data //
+    var mapInfo = (function () {
+      var mapInfo = null;
+        $.ajax({
+            'async': false,
+            'global': false,
+            'url': 'https://orbitist.space/maps/api/v1/map.json?mapid=1161',
+            'dataType': "json",
+            'success': function (data) {
+                mapInfo = data;
+            }
+        });
+        return mapInfo;
+    })();
+
+    $('#mapsList').append('<h1>' + mapInfo[0].map_title + '</h1><img class="img-responsive" src="' + mapInfo[0].map_image + '" /><p>' + mapInfo[0].map_body + '</p><a class="btn btn-sm btn-default" href="/day-of-the-dead" role="button">View Map</a><hr>');
+
+
+    
+
+    // Get points geojson data //
+    var mapInfo = (function () {
+      var mapInfo = null;
+        $.ajax({
+            'async': false,
+            'global': false,
+            'url': 'https://orbitist.space/maps/api/v1/map.json?mapid=1562',
+            'dataType': "json",
+            'success': function (data) {
+                mapInfo = data;
+            }
+        });
+        return mapInfo;
+    })();
+
+    $('#mapsList').append('<h1>' + mapInfo[0].map_title + '</h1><img class="img-responsive" src="' + mapInfo[0].map_image + '" /><p>' + mapInfo[0].map_body + '</p><a class="btn btn-sm btn-default" href="/christmas" role="button">View Map</a><hr>');
+
+
+    
+  </script>
 	
 	
 		
