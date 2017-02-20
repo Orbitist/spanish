@@ -1,0 +1,12 @@
+<ul class="nav nav-pills">
+	<li role="presentation" class="dropdown">
+		<a class="dropdown-toggle btn btn-xs btn-default" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
+			<i class="fa fa-list-alt" aria-hidden="true"></i> Layers <span class="caret"></span>
+		</a>
+		<ul class="dropdown-menu" role="menu">
+		{% for post in site.posts %}
+				<li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+		{% endfor %}
+		</ul>
+	</li>
+</ul>

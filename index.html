@@ -1,0 +1,13 @@
+---
+layout: page
+---
+  <div class="container">
+
+    {% for post in site.posts %}
+    <div class="col-md-6">
+      <h4>{{ post.mapNumber }}</h4>
+      <p><a class="btn btn-lg btn-success" href="{{ site.baseurl }}{{ post.url }}" role="button">View Map</a></p>
+    </div>
+    {% endfor %}
+
+  </div> <!-- /container -->

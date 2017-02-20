@@ -1,0 +1,12 @@
+permalink: :title
+
+highlighter: rouge
+markdown: kramdown
+
+title : Orbitist Sanish Classroom Maps
+
+production_url : labs.orbitist.com/spanish
+
+baseurl : /spanish
+
+timezone : America/New_York
