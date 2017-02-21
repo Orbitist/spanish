@@ -70,6 +70,7 @@
   <div class="sk-spinner sk-spinner-pulse"></div>
 </div>
 
+<hr>
 <div id="firstPost"></div>
 <div id="mapsList"></div>
 
@@ -230,7 +231,7 @@
   
 
   function removeSpinner() {
-    $(document).find(".spinner").fadeOut(1000, function () {
+    $(document).find(".spinner").delay(2000).fadeOut(1000, function () {
       $(this).remove();
     });
   };
