@@ -68,7 +68,7 @@ iframe.mapEmbed {
   color: white;
   z-index: 1;
   width: 100%;
-  margin-top: 25%;
+  margin-top: 20%;
   padding: 0 5px;
   text-align: center;
 }
@@ -102,6 +102,6 @@ iframe.mapEmbed {
   -o-animation:      arrow-jump 1s infinite;
   animation:         arrow-jump 1s infinite;
 }
-.hero-button:hover {
+.hero-button:hover, .hero-button:visited {
   color: #eee;
 }

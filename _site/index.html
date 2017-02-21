@@ -29,9 +29,6 @@
       <a class="navbar-brand" href="">
         <img style="height:100%;" alt="Brand" src="http://static1.squarespace.com/static/55a95d75e4b0ca41a09fafe7/t/589e21d6414fb5bf98b09b63/1486762029750/?format=1500w">
       </a>
-      <a class="navbar-brand" href="">
-        Spanish Lesson Maps
-      </a>
     </div><!-- /.navbar-header -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
@@ -40,6 +37,7 @@
           <ul class="dropdown-menu" id="menuItems">
           </ul>
         </li>
+        <li><a href="http://www.orbitist.com/donate"><i class="fa fa-gift"></i> Donate</a></li>
       </ul>
     </div><!-- /.collapse navbar-collapse -->
   </div><!-- /.container-fluid -->
@@ -47,7 +45,7 @@
 
 <div class="hero">
   <div class="hero-text">
-    <h1>Spanish Classroom Maps</h1>
+    <h2>Spanish Classroom Maps</h1>
     <p class="lead">Use these maps in your Spanish classroom to teach about culture, history, customs, and more!</p>
   </div>
   <a class="hero-button" href="#firstPost"><i class="fa fa-arrow-down"></i></a>
@@ -74,7 +72,7 @@
         return mapInfo;
     })();
     $('#menuItems').append('<li><a href="#1161"><i class="fa fa-map-marker"></i> ' + mapInfo[0].map_title + '</a></li>');
-    $('#mapsList').append('<div class="post-hero"><a href="http://localhost:4000/day-of-the-dead"><h3 id="1161">' + mapInfo[0].map_title + '</h3><div class="mapsListImage"><img class="img-responsive" src="' + mapInfo[0].map_image + '" /></div></a></div><p>' + mapInfo[0].map_body + '</p><a class="btn btn-sm btn-success center-block" href="http://localhost:4000/day-of-the-dead" role="button">View Map <i class="fa fa-arrow-right"></i></a><hr>');
+    $('#mapsList').append('<div class="post-hero"><a href="http://localhost:4000/day-of-the-dead"><div class="mapsListImage"><img class="img-responsive" src="' + mapInfo[0].map_image + '" /></div><h3 id="1161">' + mapInfo[0].map_title + '</h3></a></div><p>' + mapInfo[0].map_body + '</p><div class="text-center"><a class="btn btn-lg btn-success" href="http://localhost:4000/day-of-the-dead" role="button">View Map <i class="fa fa-arrow-right"></i></a></div><hr>');
   
     // Get points geojson data //
     var mapInfo = (function () {
@@ -91,7 +89,7 @@
         return mapInfo;
     })();
     $('#menuItems').append('<li><a href="#1562"><i class="fa fa-map-marker"></i> ' + mapInfo[0].map_title + '</a></li>');
-    $('#mapsList').append('<div class="post-hero"><a href="http://localhost:4000/christmas"><h3 id="1562">' + mapInfo[0].map_title + '</h3><div class="mapsListImage"><img class="img-responsive" src="' + mapInfo[0].map_image + '" /></div></a></div><p>' + mapInfo[0].map_body + '</p><a class="btn btn-sm btn-success center-block" href="http://localhost:4000/christmas" role="button">View Map <i class="fa fa-arrow-right"></i></a><hr>');
+    $('#mapsList').append('<div class="post-hero"><a href="http://localhost:4000/christmas"><div class="mapsListImage"><img class="img-responsive" src="' + mapInfo[0].map_image + '" /></div><h3 id="1562">' + mapInfo[0].map_title + '</h3></a></div><p>' + mapInfo[0].map_body + '</p><div class="text-center"><a class="btn btn-lg btn-success" href="http://localhost:4000/christmas" role="button">View Map <i class="fa fa-arrow-right"></i></a></div><hr>');
   
 </script>
 	
