@@ -68,8 +68,25 @@ iframe.mapEmbed {
   color: white;
   z-index: 1;
   width: 100%;
-  margin-top: 30%;
+  margin-top: 25%;
   padding: 0 5px;
+  text-align: center;
+}
+
+@-webkit-keyframes arrow-jump {
+  0%   { opacity: 1;}
+  50% { opacity: 1;
+    -webkit-transform: translateY(10px);
+    -moz-transform: translateY(10px);
+    -0-transform: translateY(10px);
+    transform: translateY(10px);
+    }
+    100% { opacity: 1;
+      -webkit-transform: translateY(0px);
+      -moz-transform: translateY(0px);
+      -0-transform: translateY(0px);
+      transform: translateY(0px);
+    }
 }
 
 .hero-button {
@@ -80,6 +97,10 @@ iframe.mapEmbed {
   width: 100%;
   text-align: center;
   font-size: 50px;
+  -webkit-animation: arrow-jump 1s infinite;
+  -moz-animation:    arrow-jump 1s infinite
+  -o-animation:      arrow-jump 1s infinite;
+  animation:         arrow-jump 1s infinite;
 }
 .hero-button:hover {
   color: #eee;
