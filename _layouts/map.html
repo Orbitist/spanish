@@ -11,4 +11,20 @@ layout: default
   </div><!-- /.container-fluid -->
 </nav>
 
+<!-- Spinner -->
+<div class="spinner">
+  <div class="sk-spinner sk-spinner-pulse"></div>
+</div>
+
 <iframe class="mapEmbed" src="https://orbitist.space/maps/launch/embed?mapid={{ page.mapNumber }}" frameborder="0" allowfullscreen></iframe>
+
+
+<script>
+  function removeSpinner() {
+    $(document).find(".spinner").delay(3000).fadeOut(1000, function () {
+      $(this).remove();
+    });
+  };
+
+  removeSpinner();
+</script>
