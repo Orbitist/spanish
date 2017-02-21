@@ -56,6 +56,6 @@ layout: page
         return mapInfo;
     })();
     $('#menuItems').append('<li><a href="#{{post.mapNumber}}"><i class="fa fa-map-marker"></i> ' + mapInfo[0].map_title + '</a></li>');
-    $('#mapsList').append('<div class="post-hero"><a href="{{ site.url }}{{ post.url }}"><div class="mapsListImage"><img class="img-responsive" src="' + mapInfo[0].map_image + '" /></div><h3 id="{{post.mapNumber}}">' + mapInfo[0].map_title + '</h3></a></div><p>' + mapInfo[0].map_body + '</p><div class="text-center"><a class="btn btn-lg btn-success" href="{{ site.baseurl }}{{ post.url }}" role="button">View Map <i class="fa fa-arrow-right"></i></a></div><hr>');
+    $('#mapsList').append('<div class="post-hero" id="{{post.mapNumber}}"><a href="{{ site.url }}{{ post.url }}"><div class="mapsListImage"><img class="img-responsive" src="' + mapInfo[0].map_image + '" /></div><h3>' + mapInfo[0].map_title + '</h3></a></div><p>' + mapInfo[0].map_body + '</p><div class="text-center"><a class="btn btn-lg btn-success" href="{{ site.baseurl }}{{ post.url }}" role="button">View Map <i class="fa fa-arrow-right"></i></a></div><hr>');
   {% endfor %}
 </script>
