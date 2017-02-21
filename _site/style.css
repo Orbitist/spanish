@@ -3,17 +3,23 @@
 body {
   margin-top: 50px;
   font-family: 'Ubuntu', sans-serif;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
-h1 {
+h1, h2, h3 {
   text-align: center;
 }
 
 p {
-  text-align: center;
   max-width: 500px;
-  margin: 0 auto;
+  margin: 10px auto;
   font-weight: 300;
+  padding: 0 5px;
+}
+
+iframe {
+  max-width: 100% !important;
 }
 
 .btn {
@@ -37,4 +43,44 @@ iframe.mapEmbed {
   left: 0;
   width: 100%;
   height: calc(100vh - 50px);
+}
+
+/* Hero Styles */
+.hero {
+  background: url('img/spain.jpg') no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: calc(100vh - 50px);
+}
+
+.hero-overlay {
+  position: absolute;
+  width: 100%;
+  height: calc(100vh - 50px);
+  background-color: black;
+  opacity: 0.4;
+}
+
+.hero-text {
+  position: absolute;
+  color: white;
+  z-index: 1;
+  width: 100%;
+  margin-top: 30%;
+  padding: 0 5px;
+}
+
+.hero-button {
+  position: absolute;
+  bottom: 50px;
+  color: white;
+  z-index: 1;
+  width: 100%;
+  text-align: center;
+  font-size: 50px;
+}
+.hero-button:hover {
+  color: #eee;
 }

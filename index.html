@@ -29,6 +29,16 @@ layout: page
   </div><!-- /.container-fluid -->
 </nav>
 
+<div class="hero">
+  <div class="hero-text">
+    <h1>Spanish Classroom Maps</h1>
+    <p class="lead">Use these maps in your Spanish classroom to teach about culture, history, customs, and more!</p>
+  </div>
+  <a class="hero-button" href="#firstPost"><i class="fa fa-arrow-down"></i></a>
+  <div class="hero-overlay"></div>
+</div>
+
+<div id="firstPost"></div>
 <div id="mapsList"></div>
 
 <script>
@@ -48,6 +58,6 @@ layout: page
         return mapInfo;
     })();
     $('#menuItems').append('<li><a href="#{{post.mapNumber}}"><i class="fa fa-map-marker"></i> ' + mapInfo[0].map_title + '</a></li>');
-    $('#mapsList').append('<a href="{{ site.url }}{{ post.url }}"><h1 id="{{post.mapNumber}}">' + mapInfo[0].map_title + '</h1><div class="mapsListImage"><img class="img-responsive" src="' + mapInfo[0].map_image + '" /></div></a><p>' + mapInfo[0].map_body + '</p><a class="btn btn-sm btn-default center-block" href="{{ site.url }}{{ post.url }}" role="button">View Map</a><hr>');
+    $('#mapsList').append('<div class="post-hero"><a href="{{ site.url }}{{ post.url }}"><h3 id="{{post.mapNumber}}">' + mapInfo[0].map_title + '</h3><div class="mapsListImage"><img class="img-responsive" src="' + mapInfo[0].map_image + '" /></div></a></div><p>' + mapInfo[0].map_body + '</p><a class="btn btn-sm btn-success center-block" href="{{ site.url }}{{ post.url }}" role="button">View Map <i class="fa fa-arrow-right"></i></a><hr>');
   {% endfor %}
 </script>
